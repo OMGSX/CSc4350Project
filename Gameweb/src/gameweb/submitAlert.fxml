@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="198.0" prefWidth="363.0" style="-fx-border-color: red;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gameweb.SubmitAlertController">
+   <children>
+      <Label layoutX="50.0" layoutY="31.0" prefHeight="35.0" prefWidth="282.0" text="Registration Successful !" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Text layoutX="94.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please click &quot;OK&quot; to go to main page" textAlignment="CENTER" />
+      <Button fx:id="closewin" layoutX="175.0" layoutY="131.0" mnemonicParsing="false" onAction="#registerOk" text="OK" />
+   </children>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+   <cursor>
+      <Cursor fx:constant="DEFAULT" />
+   </cursor>
+</AnchorPane>
