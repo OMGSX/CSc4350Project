@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.media.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="825.0" prefWidth="1242.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gameweb.AfterLoginController">
+   <children>
+      <SplitPane dividerPositions="0.05710814094775213" orientation="VERTICAL" prefHeight="825.0" prefWidth="1242.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: #404040;">
+               <children>
+                  <TextField layoutX="456.0" layoutY="11.0" prefHeight="25.0" prefWidth="294.0" promptText="Enter Keyword" />
+                  <Button layoutX="757.0" layoutY="10.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="63.0" text="Search" />
+                  <MenuButton layoutX="177.0" layoutY="10.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="110.0" text="Sort by price">
+                     <items>
+                        <MenuItem fx:id="under5" mnemonicParsing="false" onAction="#under5Clicked" text="Under $5" />
+                        <MenuItem fx:id="under10" mnemonicParsing="false" onAction="#under10Clicked" text="Under $10" />
+                     </items>
+                  </MenuButton>
+                  <MenuButton fx:id="menuBottonAccount" layoutX="1075.0" layoutY="10.0" mnemonicParsing="false" style="-fx-background-color:          linear-gradient(#f0ff35, #a9ff00),          radial-gradient(center 50% -40%, radius 200%, #b8ee36 45%, #80c800 50%);      -fx-background-radius: 6, 5;      -fx-background-insets: 0, 1;      -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );      -fx-text-fill: #395306;" text="Account">
+                     <items>
+                        <MenuItem fx:id="myAccount" mnemonicParsing="false" onAction="#myAccountClicked" text="My account" />
+                        <MenuItem fx:id="myOrder" mnemonicParsing="false" onAction="#myOrderClicked" text="My order" />
+                        <MenuItem fx:id="logoutButton" mnemonicParsing="false" onAction="#logoutClicked" text="Logout" />
+                     </items>
+                    
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </MenuButton>
+                  <ImageView fitHeight="68.0" fitWidth="70.0" layoutX="1172.0" layoutY="-10.0" onMouseClicked="#cartclicked" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/cart.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <MenuButton layoutX="21.0" layoutY="10.0" mnemonicParsing="false" text="Browse by category">
+                    <items>
+                      <MenuItem mnemonicParsing="false" text="Action" />
+                      <MenuItem mnemonicParsing="false" text="Action-adventure" />
+                        <MenuItem mnemonicParsing="false" text="Adventure" />
+                        <MenuItem mnemonicParsing="false" text="Role-playing" />
+                        <MenuItem mnemonicParsing="false" text="Simulation" />
+                        <MenuItem mnemonicParsing="false" text="Strategy" />
+                        <MenuItem mnemonicParsing="false" text="Sports" />
+                        <MenuItem mnemonicParsing="false" text="Other games" />
+                    </items>
+                  </MenuButton>
+                  <Button fx:id="contactUs" layoutX="983.0" layoutY="10.0" mnemonicParsing="false" onAction="#contactUsClicked" text="Contact Us" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="752.0" prefWidth="1240.0">
+               <children>
+                  <Label layoutX="412.0" layoutY="14.0" prefHeight="53.0" prefWidth="379.0" style="-fx-alignment: center;" text="FUSE GAME STORE" textFill="#f50606">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+                  <TableView fx:id="gameTable" layoutY="96.0" prefHeight="676.0" prefWidth="1240.0">
+                    <columns>
+                      <TableColumn fx:id="colGameType" prefWidth="117.0" text="Game Type" />
+                        <TableColumn fx:id="colGameTitle" prefWidth="405.0" text="Game Title" />
+                        <TableColumn fx:id="colDescription" prefWidth="464.0" text="Description" />
+                        <TableColumn fx:id="colRegularPrice" minWidth="0.0" prefWidth="117.0" text="Regular Price ($)" />
+                        <TableColumn fx:id="colDiscountedPrice" minWidth="0.0" prefWidth="135.0" text="Discounted Price ($)" />
+                    </columns>
+                  </TableView>
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

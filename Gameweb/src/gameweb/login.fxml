@@ -17,17 +17,18 @@
                     <Image url="@../img/login.jpg" />
                 </image>   
             </ImageView>
+            <Text fill="WHITE" layoutX="168.0" layoutY="385.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Text>
+            <Button fx:id="adminLogin" layoutX="299.0" layoutY="706.0" mnemonicParsing="false" onAction="#adminLoginClicked" text="Admin Login" />
          </children>
       </AnchorPane>
       <Button fx:id="loginButton" layoutX="259.0" layoutY="537.0" mnemonicParsing="false" onAction="#loginButtonClicked" text="Log-In" />
       <Button fx:id="registerButton" layoutX="348.0" layoutY="537.0" mnemonicParsing="false" onAction="#registerButtonClicked" text="Register" />
-      <TextField layoutX="259.0" layoutY="365.0" />
-      <PasswordField layoutX="259.0" layoutY="437.0" />
-      <Text fill="WHITE" layoutX="181.0" layoutY="384.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User ID">
-         <font>
-            <Font name="System Bold" size="17.0" />
-         </font>
-      </Text>
+      <TextField fx:id="username" layoutX="259.0" layoutY="365.0" />
+      <PasswordField fx:id="password" layoutX="259.0" layoutY="437.0" />
       <Text fill="WHITE" layoutX="172.0" layoutY="456.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
          <font>
             <Font name="System Bold" size="17.0" />
@@ -38,6 +39,5 @@
             <Font name="Berlin Sans FB" size="64.0" />
          </font>
       </Text>
-      <CheckBox layoutX="259.0" layoutY="482.0" mnemonicParsing="false" text="Show Password" textFill="WHITE" />
     </children>
 </AnchorPane>
