@@ -16,12 +16,16 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: #404040;">
                <children>
-                  <TextField layoutX="456.0" layoutY="11.0" prefHeight="25.0" prefWidth="294.0" promptText="Enter Keyword" />
-                  <Button layoutX="757.0" layoutY="10.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="63.0" text="Search" />
-                  <MenuButton layoutX="14.0" layoutY="11.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="112.0" text="Sort by price">
+                  <TextField fx:id="searchField" layoutX="456.0" layoutY="11.0" prefHeight="25.0" prefWidth="294.0" promptText="Enter Keyword" />
+                  <Button layoutX="757.0" layoutY="10.0" mnemonicParsing="false" onAction="#searchClicked" prefHeight="25.0" prefWidth="63.0" text="Search" />
+                  <MenuButton layoutX="164.0" layoutY="11.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="121.0" text="Browse by price">
                      <items>
-                        <MenuItem mnemonicParsing="false" text="Under $5" />
-                        <MenuItem mnemonicParsing="false" text="Under $10" />
+                        <MenuItem fx:id="under5" mnemonicParsing="false" onAction="#under5Clicked" text="Under $5" />
+                        <MenuItem fx:id="under10" mnemonicParsing="false" onAction="#under10Clicked" text="Under $10" />
+                        <MenuItem mnemonicParsing="false" onAction="#under20Clicked" text="Under $20" />
+                        <MenuItem mnemonicParsing="false" onAction="#under30Clicked" text="Under $30" />
+                        <MenuItem mnemonicParsing="false" onAction="#over30Clicked" text="Over $30" />
+                        <MenuItem fx:id="seeAll" mnemonicParsing="false" onAction="#seeAllClicked" text="See All" />
                      </items>
                   </MenuButton>
                   <MenuButton fx:id="menuBottonAccount" layoutX="1133.0" layoutY="11.0" mnemonicParsing="false" style="-fx-background-color:          linear-gradient(#f0ff35, #a9ff00),          radial-gradient(center 50% -40%, radius 200%, #b8ee36 45%, #80c800 50%);      -fx-background-radius: 6, 5;      -fx-background-insets: 0, 1;      -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );      -fx-text-fill: #395306;" text="Account">
@@ -34,6 +38,19 @@
                      </font>
                   </MenuButton>
                   <Button fx:id="customerInfo" layoutX="843.0" layoutY="10.0" mnemonicParsing="false" onAction="#customerInfoClicked" text="Manage Customer info" />
+                  <MenuButton layoutX="14.0" layoutY="11.0" mnemonicParsing="false" text="Browse by category">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#actionClicked" text="Action" />
+                      <MenuItem mnemonicParsing="false" onAction="#a_aClicked" text="Action-adventure" />
+                        <MenuItem mnemonicParsing="false" onAction="#advClicked" text="Adventure" />
+                        <MenuItem mnemonicParsing="false" onAction="#rollpClicked" text="Role-playing" />
+                        <MenuItem mnemonicParsing="false" onAction="#simulClicked" text="Simulation" />
+                        <MenuItem mnemonicParsing="false" onAction="#strategyClicked" text="Strategy" />
+                        <MenuItem mnemonicParsing="false" onAction="#sportClicked" text="Sports" />
+                        <MenuItem mnemonicParsing="false" onAction="#otherClicked" text="Other games" />
+                        <MenuItem mnemonicParsing="false" onAction="#seeAllClicked" text="See All" />
+                    </items>
+                  </MenuButton>
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="752.0" prefWidth="1240.0">
@@ -43,16 +60,17 @@
                         <Font name="System Bold" size="36.0" />
                      </font>
                   </Label>
-                  <TableView fx:id="gameTable" layoutY="93.0" prefHeight="679.0" prefWidth="1240.0">
+                  <TableView fx:id="gameTable" editable="true" layoutY="93.0" prefHeight="644.0" prefWidth="1240.0">
                     <columns>
                       
                         <TableColumn fx:id="colGameType" prefWidth="117.0" text="Game Type" />
-                        <TableColumn fx:id="colGameTitle" prefWidth="405.0" text="Game Title" />
+                        <TableColumn fx:id="colGameTitle" prefWidth="405.0" style="-fx-font-weight: bold;" text="Game Title" />
                         <TableColumn fx:id="colDescription" prefWidth="469.0" text="Description" />
-                        <TableColumn fx:id="colRegularPrice" minWidth="0.0" prefWidth="115.0" text="Regular Price ($)" />
-                        <TableColumn fx:id="colDiscountedPrice" minWidth="0.0" prefWidth="131.0" text="Discounted Price($)" />
+                        <TableColumn fx:id="colRegularPrice" minWidth="0.0" prefWidth="115.0" style="-fx-strikethrough: true;" text="Regular Price ($)" />
+                        <TableColumn fx:id="colDiscountedPrice" minWidth="0.0" prefWidth="132.0" style="-fx-text-fill: red; -fx-font-weight: bold;" text="Discounted Price($)" />
                         
                     </columns>
+                    
                   </TableView>
                   <ImageView fitHeight="69.0" fitWidth="63.0" layoutX="1163.0" layoutY="14.0" onMouseClicked="#addClicked" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -62,7 +80,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </ImageView>
-                  <Button layoutX="791.0" layoutY="14.0" mnemonicParsing="false" onAction="#loadDataClicked" text="Load Data" />
+                  <Button layoutX="585.0" layoutY="742.0" mnemonicParsing="false" onAction="#refreshClicked" text="Refresh" />
                </children></AnchorPane>
         </items>
       </SplitPane>

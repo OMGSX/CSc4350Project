@@ -7,15 +7,14 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="737.0" prefWidth="654.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="gameweb.MyOrderController">
+<AnchorPane id="AnchorPane" prefHeight="737.0" prefWidth="654.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gameweb.MyOrderController">
    <children>
       <Label layoutX="246.0" layoutY="42.0" text="My Order">
          <font>
             <Font name="System Bold" size="36.0" />
          </font>
       </Label>
-      <TableView layoutX="1.0" layoutY="153.0" prefHeight="582.0" prefWidth="654.0">
+      <TableView layoutX="1.0" layoutY="153.0" prefHeight="551.0" prefWidth="654.0">
         <columns>
           <TableColumn prefWidth="101.0" text="Date" />
           <TableColumn prefWidth="116.0" text="Order number" />
@@ -24,5 +23,6 @@
             <TableColumn minWidth="0.0" prefWidth="237.0" text="Status" />
         </columns>
       </TableView>
+      <Button layoutX="307.0" layoutY="711.0" mnemonicParsing="false" onAction="#backButtonClicked" text="Back" />
    </children>
 </AnchorPane>

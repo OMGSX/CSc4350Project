@@ -15,6 +15,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 
 /**
@@ -22,7 +24,18 @@ import javafx.stage.Stage;
  *
  * @author bo-gu
  */
-public class MyOrderController implements Initializable {
+public class PageCartController implements Initializable {
+
+    @FXML
+    private TableView<?> gameTable;
+    @FXML
+    private TableColumn<?, ?> colGameType;
+    @FXML
+    private TableColumn<?, ?> colGameTitle;
+    @FXML
+    private TableColumn<?, ?> colRegularPrice;
+    @FXML
+    private TableColumn<?, ?> colDiscountedPrice;
 
     /**
      * Initializes the controller class.
@@ -33,9 +46,9 @@ public class MyOrderController implements Initializable {
     }    
 
     @FXML
-    private void backButtonClicked(ActionEvent event) throws IOException {
+    private void checkoutClicked(ActionEvent event) throws IOException {
         Stage stage=new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("AfterLogin.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("pageCheckout.fxml"));
         Scene scene = new Scene(root);
         Stage register= (Stage) ((Node) event.getSource()).getScene().getWindow(); 
         register.setScene(scene);

@@ -46,13 +46,33 @@ public class LoginController implements Initializable {
     
     
     
-    @FXML
+    @FXML   //The Action when the login button clicked.
     private void loginButtonClicked(ActionEvent event) throws SQLException, Exception{
-        
+      
+     //Get user input for login on textfield/password field.   
      String urname=username.getText();
      String pword=password.getText();
       
-      
+            
+     
+        if (urname.trim().equals("")) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Login Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Please type your username");
+            alert.showAndWait();
+            
+        } else if( pword.trim().equals("")){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Login Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Please type your password.");
+            alert.showAndWait();
+        }
+        else{
+     
+     
+     
             try{
                             
             
@@ -103,6 +123,7 @@ public class LoginController implements Initializable {
 			e1.printStackTrace();
 			}
     }
+    }
     
     @FXML
     private void registerButtonClicked(ActionEvent event) throws IOException {
@@ -132,7 +153,24 @@ public class LoginController implements Initializable {
         String urname=username.getText();
         String pword=password.getText();
       
-      
+           if (urname.trim().equals("")) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Login Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Please type your username");
+            alert.showAndWait();
+            
+        } else if( pword.trim().equals("")){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Login Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Please type your password.");
+            alert.showAndWait();
+        }
+        else{
+        
+        
+        
             try{
                             
             
@@ -185,6 +223,7 @@ public class LoginController implements Initializable {
     }
         
     }
+}
 
     
     
